@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   def must_login
     if !logged_in?
-      flash[:danger] = "Please login!"
+      flash[:danger] = "GO TE CONNECTER !! "
       redirect_to login_path
     end
   end
