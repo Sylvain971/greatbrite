@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#new'
   delete 'logout', to: 'sessions#destroy'
   post 'login', to: 'sessions#create'
+  post 'signup', to: 'users#create'
+  get 'signup', to: 'users#new'
 end
