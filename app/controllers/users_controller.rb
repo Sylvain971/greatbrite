@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def edit
    @user = User.find(params[:id])
    if @user.id != current_user.id 
-    flash[:danger] = "Nice try pirate !"
+    flash[:danger] = "No new friends !"
     redirect_to root_path
    end
   end
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:email, :password)
+    params.permit(:name, :email, :password)
   end
 
 end

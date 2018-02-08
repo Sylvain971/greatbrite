@@ -6,18 +6,18 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      flash[:success] = "BRAVO LÀ ÇA GÈRE !"
+      flash[:success] = "Welcome, ready for some awesomness ?"
 
-      redirect_to reveal_path
+      redirect_to root_path
     else
-      flash.now[:danger] = "Mauvaise adresse ? Mauvais mdp ?"
+      flash.now[:danger] = "It seems like you're not one of us ?"
       render 'new'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:success] = "Allez, ++ au revoir ! ;)"
+    flash[:success] = "Hope to see you soon !"
     redirect_to root_path
   end
 
